@@ -11,7 +11,9 @@ import { useSearchParams, usePathname, useRouter } from "next/navigation"; // Im
 import Image from "next/image";
 import unidaLogo from "@/assets/unida.png";
 import { BASE_URL, SECRET_KEY_HEADER } from "@/lib/constants";
-
+function SearchBarFallback() {
+  return <>placeholder</>
+}
 // Skeleton Loading Component
 const SkeletonLoading = () => {
   return (
@@ -109,7 +111,7 @@ export default function Alumni() {
               </p>
             </div>
           </div>
-          <Suspense>
+          <Suspense fallback={<SearchBarFallback />}>
             <SearchFilter onSearch={handleSearch} />
           </Suspense>
         </Container>
