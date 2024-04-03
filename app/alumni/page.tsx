@@ -18,10 +18,10 @@ function SearchBarFallback() {
 const SkeletonLoading = () => {
   return (
     <div className="animate-pulse">
-      <div className="h-24 bg-gray-200 rounded"></div>
-      <div className="h-4 my-2 bg-gray-200 rounded"></div>
-      <div className="h-4 w-1/2 bg-gray-200 rounded"></div>
-      <div className="h-4 w-1/3 bg-gray-200 rounded"></div>
+      <div className="h-24 bg-gray-200 dark:bg-gray-800 rounded"></div>
+      <div className="h-4 my-2 bg-gray-200 dark:bg-gray-800 rounded"></div>
+      <div className="h-4 w-1/2 bg-gray-200 dark:bg-gray-800  rounded"></div>
+      <div className="h-4 w-1/3 bg-gray-200 dark:bg-gray-800  rounded"></div>
     </div>
   );
 };
