@@ -119,7 +119,6 @@ export default function Alumni() {
           <div className="mt-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {loading ? (
-                // Render skeleton loading when loading state is true
                 <>
                   <SkeletonLoading />
                   <SkeletonLoading />
