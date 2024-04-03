@@ -54,7 +54,6 @@ export default function SearchFilter({ onSearch }: SearchFilterProps) {
   }, [debouncedQuery, selectedFaculty, pathname, replace, searchParams]);
 
   useEffect(() => {
-    // Ambil nilai query dari parameter URL saat komponen dimuat
     const queryParam = searchParams.get('q');
     if (queryParam) {
       setQuery(queryParam);

@@ -110,8 +110,7 @@ export default function Alumni() {
             </div>
           </div>
           <Suspense>
-            
-          <SearchFilter onSearch={handleSearch} />
+            <SearchFilter onSearch={handleSearch} />
           </Suspense>
         </Container>
       </header>
@@ -119,22 +118,21 @@ export default function Alumni() {
       <div>
         <Container>
           <div className="mt-2">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-  {loading ? (
-    // Render skeleton loading when loading state is true
-    <>
-      <SkeletonLoading />
-      <SkeletonLoading />
-    </>
-  ) : alumniData.data.length > 0 ? (
-    alumniData.data.map((alumni, index) => (
-      <AlumniCard key={index} alumni={alumni} />
-    ))
-  ) : (
-    <div className="py-2">No alumni data found.</div>
-  )}
-</div>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {loading ? (
+                // Render skeleton loading when loading state is true
+                <>
+                  <SkeletonLoading />
+                  <SkeletonLoading />
+                </>
+              ) : alumniData.data.length > 0 ? (
+                alumniData.data.map((alumni, index) => (
+                  <AlumniCard key={index} alumni={alumni} />
+                ))
+              ) : (
+                <div className="py-2">No alumni data found.</div>
+              )}
+            </div>
           </div>
 
           <div className="mt-2">
