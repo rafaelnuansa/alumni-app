@@ -51,7 +51,7 @@ export default function SearchFilter({ onSearch }: SearchFilterProps) {
       params.delete('faculty');
     }
     replace(`${pathname}?${params.toString()}`);
-  }, [debouncedQuery, selectedFaculty]);
+  }, [debouncedQuery, selectedFaculty, pathname, replace, searchParams]);
 
   useEffect(() => {
     // Ambil nilai query dari parameter URL saat komponen dimuat
@@ -60,7 +60,7 @@ export default function SearchFilter({ onSearch }: SearchFilterProps) {
       setQuery(queryParam);
     }
   }, [searchParams]);
-  
+
   const fetchFaculties = async () => {
     try {
       const response = await fetch(`${BASE_URL}/faculties`, {

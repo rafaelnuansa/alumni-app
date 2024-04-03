@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import MetaTags from "@/components/meta-tags";
 import { Container } from "@/components/container";
 import Head from "next/head";
@@ -109,7 +109,10 @@ export default function Alumni() {
               </p>
             </div>
           </div>
+          <Suspense>
+            
           <SearchFilter onSearch={handleSearch} />
+          </Suspense>
         </Container>
       </header>
 
