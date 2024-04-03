@@ -48,7 +48,7 @@ export default function Alumni() {
     const params = new URLSearchParams(searchParams);
     params.set("page", String(currentPage));
     replace(`?${params.toString()}`);
-  }, [currentPage]); 
+  }, [currentPage, replace, searchParams]);
 
   const fetchData = async (page: number) => {
     try {
@@ -116,18 +116,22 @@ export default function Alumni() {
       <div>
         <Container>
           <div className="mt-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {loading ? ( // Render skeleton loading when loading state is true
-                <React.Fragment>
-                  <SkeletonLoading />
-                  <SkeletonLoading />
-                </React.Fragment>
-              ) : alumniData.data.length > 0 ? (
-                alumniData.data.map((alumni) => <AlumniCard alumni={alumni} />)
-              ) : (
-                <div className="py-2">No alumni data found.</div>
-              )}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  {loading ? (
+    // Render skeleton loading when loading state is true
+    <>
+      <SkeletonLoading />
+      <SkeletonLoading />
+    </>
+  ) : alumniData.data.length > 0 ? (
+    alumniData.data.map((alumni, index) => (
+      <AlumniCard key={index} alumni={alumni} />
+    ))
+  ) : (
+    <div className="py-2">No alumni data found.</div>
+  )}
+</div>
+
           </div>
 
           <div className="mt-2">

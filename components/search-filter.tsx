@@ -59,8 +59,8 @@ export default function SearchFilter({ onSearch }: SearchFilterProps) {
     if (queryParam) {
       setQuery(queryParam);
     }
-  }, []);
-
+  }, [searchParams]);
+  
   const fetchFaculties = async () => {
     try {
       const response = await fetch(`${BASE_URL}/faculties`, {
